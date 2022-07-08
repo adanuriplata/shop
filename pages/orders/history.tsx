@@ -56,9 +56,7 @@ const HistoryPage = () => {
             columns={ columns }
             pageSize={ 10 }
             rowsPerPageOptions={ [10] }
-          >
-
-          </DataGrid>
+          />
         </Grid>
       </Grid>
     </ShopLayout>
