@@ -86,7 +86,6 @@ export default ProductPage
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
   const productSlugs  = await dbProducts.getAllProductSlugs()  // your fetch function here 
-  console.log(productSlugs)
   return {
     paths: productSlugs.map( ({slug}) => ( { 
       params: { 
