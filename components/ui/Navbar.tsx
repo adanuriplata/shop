@@ -3,6 +3,8 @@ import NextLink from 'next/link'
 import {Box} from "@mui/system";
 import {SearchOutlined, ShoppingCartOutlined} from "@mui/icons-material";
 import { useRouter } from 'next/router'
+import { useContext } from "react";
+import { UiContext } from "../../context";
 
 
 
@@ -10,6 +12,7 @@ export const Navbar = () => {
 
   const router = useRouter()
 
+  const { toggleSidemenu } = useContext(UiContext)
 
   const isCurrentPage = (itemLink: string) => {
     const currentPage = router.pathname
@@ -63,7 +66,7 @@ export const Navbar = () => {
           </Link>
         </NextLink>
 
-        <Button>Menu</Button>
+        <Button onClick={toggleSidemenu}>Menu</Button>
 
       </Toolbar>
     </AppBar>
