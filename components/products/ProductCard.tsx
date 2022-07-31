@@ -1,6 +1,6 @@
 // @flow 
 import {useMemo} from 'react';
-import {Box, Card, CardActionArea, CardMedia, Grid, Link, Typography} from "@mui/material";
+import {Box, Card, CardActionArea, CardMedia, Chip, Grid, Link, Typography} from "@mui/material";
 import {FC, PropsWithChildren, useState} from "react";
 import NextLink from 'next/link'
 import {IProduct} from "../../interfaces";
@@ -31,7 +31,15 @@ export const ProductCard: FC<PropsWithChildren<Props>> = ( { product }) => {
       <Card>
         <NextLink href={`/product/${product.slug}`} passHref prefetch={false}>
           <Link>
+
             <CardActionArea>
+              {
+                (product.inStock === 0 ) && (
+                  <Chip color='error' 
+                        label='No hay disponibles' 
+                        sx={{ position: 'absolute', zIndex: 99, top: '10px', left: '10px'}} />
+                )
+              }
               <CardMedia
                 component='img'
                 className='fadeIn'
