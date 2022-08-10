@@ -4,7 +4,8 @@ import { ThemeProvider, CssBaseline } from "@mui/material";
 import { lightTheme } from "../themes";
 import { SWRConfig } from 'swr';
 import { UiProvider } from '../context';
-import { CartProvider } from '../context/cart';
+import { CartProvider } from '../context';
+// import { CartProvider } from '../context/cart';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
